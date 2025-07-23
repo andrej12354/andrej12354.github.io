@@ -1,8 +1,8 @@
 // --- Config --- //
 var purecookieTitle = "Cookies."; // Title
-var purecookieDesc = "Utilizzando questo sito Web, accetti automaticamente i cookies in utilizzo."; // Description
-var purecookieLink = '<a href="" target="_blank">LEGGI</a>'; // Cookiepolicy link
-var purecookieButton = "ACCETTA"; // Button text
+var purecookieDesc = "By using this website, you automatically accept the use of cookies."; // Description
+var purecookieLink = '<a href="" target="_blank">LAWS</a>'; // Cookiepolicy link
+var purecookieButton = "ACCEPT"; // Button text
 // ---        --- //
 
 
