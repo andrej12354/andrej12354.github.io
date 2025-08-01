@@ -1,5 +1,5 @@
 function copy(){
-    navigator.clipboard.writeText('play.mysticlands.net')
+    navigator.clipboard.writeText('minedime.org')
     swal({
     title: 'IP COPIATO',
     text: 'Buon divertimento',
