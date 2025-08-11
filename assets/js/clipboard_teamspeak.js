@@ -1,10 +1,10 @@
-function copy(){
-    navigator.clipboard.writeText('ts.onecraft.it')
+function copy() {
+    navigator.clipboard.writeText('minedime.org');
     swal({
-    title: 'IP COPIATO',
-    text: 'BUON DIVERTIMENTO',
-    icon: 'success',
-    timer: 2000,
-    buttons: false,
-})
+        title: 'IP COPIED',
+        text: 'Have fun',
+        icon: 'success',
+        timer: 2000,
+        buttons: false,
+    });
 }
