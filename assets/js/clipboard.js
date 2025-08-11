@@ -1,10 +1,10 @@
-function copy(){
-    navigator.clipboard.writeText('minedime.org')
+function copy() {
+    navigator.clipboard.writeText('minedime.org');
     swal({
-    title: 'IP COPIATO',
-    text: 'Buon divertimento',
-    icon: 'success',
-    timer: 2000,
-    buttons: false,
-})
+        title: 'IP COPIED',
+        text: 'Have fun',
+        icon: 'success',
+        timer: 2000,
+        buttons: false,
+    });
 }
