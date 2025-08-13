@@ -1,179 +1,228 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>MineDime - Home</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
-		<link href="https://it.allfont.net/allfont.css?fonts=comic-sans-ms" rel="stylesheet" type="text/css">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://kit.fontawesome.com/a1f6a7827b.js" crossorigin="anonymous"></script>
-		<link rel="icon" href="images/logo.png">
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>MineDime - Home</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+    <link href="https://it.allfont.net/allfont.css?fonts=comic-sans-ms" rel="stylesheet" type="text/css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" href="images/logo.png">
+    
+    <style>
+        /* Lava / Volcanic Theme */
+        body {
+            background: #1a1a1a;
+            color: #fff5f0;
+            font-family: 'Merriweather', serif;
+        }
 
-	</head>
-	<body class="landing is-preload" oncontextmenu="return false" onselect="return false" ondragstart="return false">
+        header, nav, footer {
+            background-color: #2b1f1f;
+            border-color: #ff4500;
+        }
 
-		<!-- Back to top button -->
-      <a id="buttontop"></a>
+        a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ffcc00;
+        }
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+        button, .button {
+            background: linear-gradient(45deg, #ff4500, #ff0000);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover, .button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #ff6347, #ffcc00);
+        }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<div style='margin:15px; padding:10px;'>
-							<a href="index.html"><img src="images/logo.png" alt="logo" id="logo" width="150" height="150"></a>
-						</div>
-						<nav id="nav">
+        section.wrapper {
+            background: linear-gradient(145deg, #2b1f1f 0%, #3d1f1f 100%);
+            border-radius: 10px;
+            padding: 40px 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(255,69,0,0.5);
+        }
 
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a style="cursor: pointer;" onClick="window.open('index.html', '_self')">Home</a></li>
-											<li><a style="cursor: pointer;" onClick="window.open('https://store.minedime.org//', '_blank')">Store</a></li>
-											<li><a style="cursor: pointer;" onClick="window.open('vote.html', '_self')" >Vote</a></li>
-											<li><a style="cursor: pointer;" onClick="window.open('rules.html', '_self')">Rules</a></li>
-											<li><a style="cursor: pointer;" onClick="window.open('bacheca.html', '_self')">News</a></li>
-											<li><a style="cursor: pointer;" onClick="window.open('staff.html', '_self')">Staff</a></li>
-											<li><a style="cursor: pointer;" onClick="window.open('social.html', '_self')">Social</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+        h1, h2, h3, h4, h5, h6 {
+            color: #ff4500;
+            text-shadow: 1px 1px 2px #990000;
+        }
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<!-- <h2>ServerName</h2> -->
-							<ul class="actions">
-								<li><a onclick="copy()" class="button special primary">minedime.org</a></li>
-						  	</ul>
-							<ul class="actions special">
-								<li><a href="vote.html" class="button" target="_self">Vote</a></li>
-								<li><a href="https://store.minedime.org/" class="button" target="_blank">Store</a></li>
-								<li><a href="staff.html" class="button" target="_self">Staff</a></li>
-							</ul>
-						</div>
-						<br>
-						<a href="#one" class="more scrolly">Scroll</a>
-					</section>
+        /* Cards / Spotlight Sections */
+        .spotlight .content {
+            background-color: #2b1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255,69,0,0.4);
+            margin-top: 10px;
+        }
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Our Gamemodes</h2>
-								<p>Here are the gamemodes you can find in our server!</p>
-							</header>
-						</div>
-					</section>
+        /* Community Buttons */
+        .features li button {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="landing is-preload" oncontextmenu="return false" onselect="return false" ondragstart="return false">
 
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>LifeSteal</h2>
-								<p>Bored of playing in singleplayer
-                                                                        Join our Vanilla LifeSteal server and experience non-stop action, epic events, and amazing features you never even imagined.
-                                                                        To make the most out of this gamemode, invite as many friends as possible and enjoy the fun together!	
-                                                                        Have fun and good luck!</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Pvp Practice</h2>
-								<p>Pvp Practice is a gamemode where you can have ffas duels fight friends and more you can check it out in minedime.org</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Coming Soon!</h2>
-								<p>Coming soon got any suggestions leave them in the discord</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Coming Soon!</h2>
-								<p>Coming soon got any suggestions leave them in the discord</p>
-							</div>
-						</section>
-					</section>
+<!-- Page Wrapper -->
+<div id="page-wrapper">
 
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Community</h2>
-								<p>Join our community</p>
-							</header>
-							<ul class="features">
-								<li class="far fa-paper-plane">
-									<h3 style="font-family: 'Comic Sans MS', arial;">STORE</h3>
-									<p style="font-family: 'Comic Sans MS', arial;">OUR STORE</p>
-									<button type="button" onClick="window.open('https://store.minedime.org/, '_blank')">CLICK</button>
-								</li>
-								<li class="fab fa-discord">
-									<h3 style="font-family: 'Comic Sans MS', arial;">DISCORD</h3>
-									<P style="font-family: 'Comic Sans MS', arial;">JOIN OUR DISCORD SERVER</P>
-									<button type="button" onClick="window.open('discord.html', '_self')">CLICK</button>
-								</li>
-								<li class="fab fa-instagram">
-									<h3 style="font-family: 'Comic Sans MS', arial;">SOCIAL</h3>
-									<P style="font-family: 'Comic Sans MS', arial;">OUR SOCIALS</P>
-									<button type="button" onClick="window.open('social.html', '_self')">CLICK</button>
-								</li>
-							</ul>
-						</div>
-					</section>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <div style='margin:15px; padding:10px;'>
+            <a href="/"><img src="images/logo.png" alt="logo" id="logo" width="150" height="150"></a>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li class="special">
+                    <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="https://store.minedime.org/" target="_blank">Store</a></li>
+                            <li><a href="/vote/">Vote</a></li>
+                            <li><a href="/rules/">Rules</a></li>
+                            <li><a href="/bacheca/">News</a></li>
+                            <li><a href="/staff/">Staff</a></li>
+                            <li><a href="/social/">Social</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Contact Staff</h2>
-							</header>
-							<ul class="actions stacked">
-								<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtXVZFDKGDjSxCPgPCFNDCFcmwlsMQjNBBKRhlbrhTGnhqFdDzTDfbcScmXrtqqsNTkvSH" class="button fit primary">E-MAIL</a></li>
-							</ul>
-						</div>
-					</section>
+    <!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <ul class="actions">
+                <li><a onclick="copy()" class="button special primary">minedime.org</a></li>
+            </ul>
+            <ul class="actions special">
+                <li><a href="/vote/" class="button">Vote</a></li>
+                <li><a href="https://store.minedime.org/" class="button" target="_blank">Store</a></li>
+                <li><a href="/staff/" class="button">Staff</a></li>
+            </ul>
+        </div>
+        <br>
+        <a href="#one" class="more scrolly">Scroll</a>
+    </section>
 
-				<!-- Footer -->
-				<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://discord.gg/DADrhdGcZM" target="_blank" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
-						<li><a href="http://youtube.minedime.org" target="_blank" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+    <!-- Gamemodes -->
+    <section id="one" class="wrapper style1 special">
+        <div class="inner">
+            <header class="major">
+                <h2>Our Gamemodes</h2>
+                <p>Here are the gamemodes you can find in our server!</p>
+            </header>
+        </div>
+    </section>
 
-					</ul>
-					<ul class="copyright">
-						<li>&copy; MineDime 2025 | All rights reserved</li>
-					</ul>
-				</footer>
+    <!-- Spotlight Sections -->
+    <section id="two" class="wrapper alt style2">
+        <section class="spotlight">
+            <div class="image"><img src="images/pic03.jpg" alt="" /></div>
+            <div class="content">
+                <h2>LifeSteal</h2>
+                <p>Bored of singleplayer? Join our Vanilla LifeSteal server and experience non-stop action, epic events, and amazing features!</p>
+            </div>
+        </section>
+        <section class="spotlight">
+            <div class="image"><img src="images/pic03.jpg" alt="" /></div>
+            <div class="content">
+                <h2>PvP Practice</h2>
+                <p>Challenge friends in duels, FFAs, and more! Check it out at minedime.org.</p>
+            </div>
+        </section>
+        <section class="spotlight">
+            <div class="image"><img src="images/pic03.jpg" alt="" /></div>
+            <div class="content">
+                <h2>Coming Soon!</h2>
+                <p>Got suggestions? Leave them in our Discord.</p>
+            </div>
+        </section>
+    </section>
 
-			</div>
+    <!-- Community -->
+    <section id="three" class="wrapper style3 special">
+        <div class="inner">
+            <header class="major">
+                <h2>Community</h2>
+                <p>Join our community</p>
+            </header>
+            <ul class="features">
+                <li class="far fa-paper-plane">
+                    <h3>STORE</h3>
+                    <p>Our Store</p>
+                    <button onclick="window.open('https://store.minedime.org/', '_blank')">CLICK</button>
+                </li>
+                <li class="fab fa-discord">
+                    <h3>DISCORD</h3>
+                    <p>Join our Discord Server</p>
+                    <button onclick="window.open('/discord/', '_self')">CLICK</button>
+                </li>
+                <li class="fab fa-instagram">
+                    <h3>SOCIAL</h3>
+                    <p>Our Socials</p>
+                    <button onclick="window.open('/social/', '_self')">CLICK</button>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/buttontop.js"></script>
-			<script src="assets/js/clipboard.js"></script>
-			<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-			<script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
-			<script src="assets/js/cookie.js"></script>
+    <!-- Contact -->
+    <section id="cta" class="wrapper style4">
+        <div class="inner">
+            <header>
+                <h2>Contact Staff</h2>
+            </header>
+            <ul class="actions stacked">
+                <li><a href="mailto:staff@minedime.org" class="button fit primary">E-MAIL</a></li>
+            </ul>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="https://discord.gg/DADrhdGcZM" target="_blank" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
+            <li><a href="http://youtube.minedime.org" target="_blank" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; MineDime 2025 | All rights reserved</li>
+        </ul>
+    </footer>
 
+</div>
 
-	</body>
-</html>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/buttontop.js"></script>
+<script src="assets/js/clipboard.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
+<script src="assets/js/cookie.js"></script>
+
+</body>
+	</html>
