@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineDime Network</title>
+  <title>MineDime Network - Join Now!</title>
+
+  <!-- SEO Meta Tags for Google -->
+  <meta name="description" content="MineDime Network - Join our unique Minecraft gamemodes including LifeSteal SMP and PvP Practice! Play now at play.minedime.org">
+  <meta name="keywords" content="Minecraft, MineDime, LifeSteal SMP, PvP Practice, Minecraft Server, join Minecraft server">
+  <meta name="author" content="MineDime Network">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -89,85 +93,3 @@
     }
   </style>
 </head>
-<body>
-  <!-- NAVIGATION BAR -->
-  <nav>
-    <a href="https://store.minedime.org">Store</a>
-    <a href="https://www.minedime.org/discord">Discord</a>
-    <a href="https://www.minedime.org/vote">Vote</a>
-    <a href="https://www.minedime.org/rules">Rules</a>
-  </nav>
-
-  <!-- HEADER -->
-  <header>
-    <h1>MineDime Network</h1>
-    <p>Version: 1.21+</p>
-  </header>
-
-  <!-- SERVER IP -->
-  <main>
-    <div class="ip-box" onclick="copyIP()">
-      <strong>Server IP:</strong> <span id="server-ip">play.minedime.org</span>
-    </div>
-    <p>Click the IP to copy!</p>
-
-    <!-- SERVER STATUS -->
-    <div class="status-box" id="server-status">
-      Loading server status...
-    </div>
-
-    <p>Welcome to MineDime! Explore our unique gamemodes below:</p>
-
-    <!-- GAMEMODES -->
-    <section>
-      <div class="gamemode">
-        <h2>⚔️ LifeSteal SMP</h2>
-        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive?</p>
-      </div>
-
-      <div class="gamemode">
-        <h2>🔥 PvP Practice</h2>
-        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal!</p>
-      </div>
-    </section>
-
-    <p style="margin-top:20px;">Contact us at <strong>support@minedime.org</strong> or open a ticket in Discord.</p>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 MineDime Network. All rights reserved.</p>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
-    function copyIP() {
-      const ip = document.getElementById('server-ip').innerText;
-      navigator.clipboard.writeText(ip).then(() => {
-        alert('IP copied to clipboard: ' + ip);
-      });
-    }
-
-    async function updateServerStatus() {
-      try {
-        const response = await fetch('https://api.mcsrvstat.us/2/play.minedime.org');
-        const data = await response.json();
-
-        const statusBox = document.getElementById('server-status');
-        if (data.online) {
-          statusBox.innerHTML = `Server is <strong style="color:lime">ONLINE</strong><br>Players: ${data.players.online} / ${data.players.max}`;
-        } else {
-          statusBox.innerHTML = `<strong style="color:red">OFFLINE</strong>`;
-        }
-      } catch (err) {
-        document.getElementById('server-status').innerHTML = `<strong style="color:red">Error fetching status</strong>`;
-        console.error(err);
-      }
-    }
-
-    // Update immediately and then every 30 seconds
-    updateServerStatus();
-    setInterval(updateServerStatus, 30000);
-  </script>
-</body>
-</html>
