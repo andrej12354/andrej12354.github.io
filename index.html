@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,15 +83,61 @@
       margin-top: 30px;
       font-size: 0.9em;
     }
-
-    .status-box {
-      background: rgba(0, 0, 0, 0.75);
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 20px;
-      border-radius: 10px;
-      font-size: 1.2em;
-      border: 2px solid #ff7f27;
-    }
   </style>
 </head>
+<body>
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <a href="https://store.minedime.org">Store</a>
+    <a href="https://www.minedime.org/discord">Discord</a>
+    <a href="https://www.minedime.org/vote">Vote</a>
+    <a href="https://www.minedime.org/rules">Rules</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>MineDime Network</h1>
+    <p>Version: 1.21+</p>
+  </header>
+
+  <!-- SERVER IP -->
+  <main>
+    <div class="ip-box" onclick="copyIP()">
+      <strong>Server IP:</strong> <span id="server-ip">play.minedime.org</span>
+    </div>
+    <p>Click the IP to copy!</p>
+
+    <p>Welcome to MineDime! Explore our unique gamemodes below:</p>
+
+    <!-- GAMEMODES -->
+    <section>
+      <div class="gamemode">
+        <h2>⚔️ LifeSteal SMP</h2>
+        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive?</p>
+      </div>
+
+      <div class="gamemode">
+        <h2>🔥 PvP Practice</h2>
+        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal!</p>
+      </div>
+    </section>
+
+    <p style="margin-top:20px;">Contact us at <strong>support@minedime.org</strong> or open a ticket in Discord.</p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 MineDime Network. All rights reserved.</p>
+  </footer>
+
+  <!-- SCRIPT FOR COPYABLE IP -->
+  <script>
+    function copyIP() {
+      const ip = document.getElementById('server-ip').innerText;
+      navigator.clipboard.writeText(ip).then(() => {
+        alert('IP copied to clipboard: ' + ip);
+      });
+    }
+  </script>
+</body>
+</html>
