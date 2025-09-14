@@ -162,3 +162,12 @@
         });
       } catch (error) {
         const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '<li>Failed to load announcements.</li>';
+        console.error('Failed to load announcements:', error);
+      }
+    }
+    loadNews();
+  </script>
+</body>
+</html>
+
