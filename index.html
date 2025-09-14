@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MineDime Network - Join Now!</title>
 
-  <!-- SEO Meta Tags for Google -->
+  <!-- SEO Meta Tags -->
   <meta name="description" content="MineDime Network - Join our unique Minecraft gamemodes including LifeSteal SMP and PvP Practice! Play now at play.minedime.org">
   <meta name="keywords" content="Minecraft, MineDime, LifeSteal SMP, PvP Practice, Minecraft Server, join Minecraft server">
   <meta name="author" content="MineDime Network">
@@ -20,7 +20,6 @@
       color: #fff;
       text-align: center;
     }
-
     nav {
       background: rgba(0, 0, 0, 0.9);
       display: flex;
@@ -43,9 +42,8 @@
     nav a:hover {
       background: #e66910;
     }
-
     header {
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0,0,0,0.85);
       padding: 40px 20px;
       border-bottom: 3px solid #ff7f27;
     }
@@ -54,7 +52,6 @@
       color: #ff7f27;
       margin: 0;
     }
-
     .ip-box {
       background: rgba(0, 0, 0, 0.75);
       display: inline-block;
@@ -65,9 +62,8 @@
       border: 2px solid #ff7f27;
       cursor: pointer;
     }
-
     section {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0,0,0,0.7);
       margin: 20px auto;
       padding: 20px;
       max-width: 800px;
@@ -76,9 +72,8 @@
     .gamemode h2, .news h2 {
       color: #ff7f27;
     }
-
     footer {
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0,0,0,0.85);
       padding: 10px;
       margin-top: 30px;
       font-size: 0.9em;
@@ -108,6 +103,7 @@
     <a href="https://www.minedime.org/discord">Discord</a>
     <a href="https://www.minedime.org/vote">Vote</a>
     <a href="https://www.minedime.org/rules">Rules</a>
+    <a href="https://www.minedime.org/news">News</a>
   </nav>
 
   <!-- HEADER -->
@@ -140,8 +136,11 @@
 
     <!-- NEWS / ANNOUNCEMENTS -->
     <section class="news">
-      <h2>📰 Latest News & Announcements</h2>
-      <ul id="news-list"></ul>
+      <h2>📰 Latest Announcements</h2>
+      <ul id="news-list">
+        <li>Loading announcements...</li>
+      </ul>
+      <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
     </section>
 
     <p style="margin-top:20px;">Contact us at <strong>support@minedime.org</strong> or open a ticket in Discord.</p>
@@ -152,7 +151,7 @@
     <p>© 2025 MineDime Network. All rights reserved.</p>
   </footer>
 
-  <!-- SCRIPT FOR COPYABLE IP & LOADING NEWS -->
+  <!-- SCRIPT FOR COPYABLE IP & ANNOUNCEMENTS -->
   <script>
     function copyIP() {
       const ip = document.getElementById('server-ip').innerText;
@@ -173,6 +172,8 @@
           newsList.appendChild(li);
         });
       } catch (error) {
+        const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '<li>Failed to load announcements.</li>';
         console.error('Failed to load announcements:', error);
       }
     }
