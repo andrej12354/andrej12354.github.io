@@ -20,6 +20,7 @@
       color: #fff;
       text-align: center;
     }
+
     nav {
       background: rgba(0, 0, 0, 0.9);
       display: flex;
@@ -29,6 +30,7 @@
       top: 0;
       z-index: 100;
     }
+
     nav a {
       color: #fff;
       background: #ff7f27;
@@ -39,6 +41,7 @@
       font-weight: bold;
       transition: background 0.3s;
     }
+
     nav a:hover { background: #e66910; }
 
     header {
@@ -46,6 +49,7 @@
       padding: 40px 20px;
       border-bottom: 3px solid #ff7f27;
     }
+
     h1 { font-size: 4em; color: #ff7f27; margin: 0; }
 
     .ip-box {
@@ -66,6 +70,7 @@
       max-width: 800px;
       border-radius: 10px;
     }
+
     .gamemode h2, .news h2 { color: #ff7f27; }
 
     footer {
@@ -127,7 +132,9 @@
     <!-- NEWS / ANNOUNCEMENTS -->
     <section class="news">
       <h2>📰 Latest Announcements</h2>
-      <ul id="news-list"><li>Loading announcements...</li></ul>
+      <ul id="news-list">
+        <li>Loading announcements...</li>
+      </ul>
       <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
     </section>
 
@@ -139,7 +146,7 @@
     <p>© 2025 MineDime Network. All rights reserved.</p>
   </footer>
 
-  <!-- SCRIPT FOR COPYABLE IP & ANNOUNCEMENTS -->
+  <!-- SCRIPT FOR COPYABLE IP & LOADING NEWS -->
   <script>
     function copyIP() {
       const ip = document.getElementById('server-ip').innerText;
@@ -150,7 +157,7 @@
 
     async function loadNews() {
       try {
-        // Fetch announcements from your announcements.html repository
+        // fetch announcements.json from the same folder
         const response = await fetch(`announcements.json?t=${new Date().getTime()}`);
         const news = await response.json();
         const newsList = document.getElementById('news-list');
@@ -166,8 +173,8 @@
         console.error('Failed to load announcements:', error);
       }
     }
+
     loadNews();
   </script>
 </body>
 </html>
-
