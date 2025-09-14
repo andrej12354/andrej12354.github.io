@@ -89,6 +89,23 @@
       text-align: left;
     }
     .news strong { color: #ff7f27; }
+
+    /* Make gamemode descriptions span 2–3 lines nicely */
+    .gamemode p {
+      max-width: 700px;
+      margin: 10px auto;
+      line-height: 1.5;
+      font-size: 1.1em;
+      text-align: left;
+    }
+
+    /* Slightly expand welcome message for readability */
+    main > p:first-of-type {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.2em;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
@@ -120,12 +137,12 @@
     <section>
       <div class="gamemode">
         <h2>⚔️ LifeSteal SMP</h2>
-        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP?</p>
+        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP? Explore dungeons, build alliances, and strategize your way to victory!</p>
       </div>
 
       <div class="gamemode">
         <h2>🔥 PvP Practice</h2>
-        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle!</p>
+        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle! Learn new combos, practice your reflexes, and rise above your opponents in competitive matches.</p>
       </div>
     </section>
 
@@ -157,7 +174,6 @@
 
     async function loadNews() {
       try {
-        // fetch announcements.json from the same folder
         const response = await fetch(`announcements.json?t=${new Date().getTime()}`);
         const news = await response.json();
         const newsList = document.getElementById('news-list');
