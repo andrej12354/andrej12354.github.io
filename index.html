@@ -73,26 +73,6 @@
 
     .gamemode h2, .news h2 { color: #ff7f27; }
 
-    .gamemode p { 
-      font-size: 1.1em; 
-      line-height: 1.6em; 
-      text-align: justify; 
-    }
-
-    .contact-btn {
-      display: inline-block;
-      margin: 20px 0;
-      padding: 15px 30px;
-      background-color: #ff7f27;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: background 0.3s;
-    }
-
-    .contact-btn:hover { background-color: #e66910; }
-
     footer {
       background: rgba(0,0,0,0.85);
       padding: 10px;
@@ -134,18 +114,18 @@
     </div>
     <p>Click the IP to copy!</p>
 
-    <p style="font-size:1.3em; line-height:1.5em;">Welcome to MineDime! Dive into our exciting Minecraft world and explore our unique gamemodes below. LifeSteal SMP, PvP Practice, and much more await your adventure!</p>
+    <p>Welcome to MineDime! Dive into our exciting Minecraft world and explore our unique gamemodes below: LifeSteal SMP, PvP Practice, and much more waiting for you!</p>
 
     <!-- GAMEMODES -->
     <section>
       <div class="gamemode">
         <h2>⚔️ LifeSteal SMP</h2>
-        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles and protect your base in the thrilling world of LifeSteal SMP?</p>
+        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP?</p>
       </div>
 
       <div class="gamemode">
         <h2>🔥 PvP Practice</h2>
-        <p>Sharpen your skills with duels, kits, and arenas. Practice combos, refine strategies, and perfect your PvP style before taking on LifeSteal and claiming victory in every encounter!</p>
+        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle!</p>
       </div>
     </section>
 
@@ -158,10 +138,7 @@
       <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
     </section>
 
-    <!-- CONTACT SUPPORT BUTTON -->
-    <a class="contact-btn" href="mailto:support@minedime.org?subject=Support%20Request&body=Hello%20MineDime%20Support,">
-      Contact Support
-    </a>
+    <p style="margin-top:20px;">Contact us at <strong>support@minedime.org</strong> or open a ticket in Discord.</p>
   </main>
 
   <!-- FOOTER -->
@@ -180,6 +157,7 @@
 
     async function loadNews() {
       try {
+        // fetch announcements.json from the same folder
         const response = await fetch(`announcements.json?t=${new Date().getTime()}`);
         const news = await response.json();
         const newsList = document.getElementById('news-list');
