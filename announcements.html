@@ -1,102 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edit Announcements - MineDime</title>
-<style>
-  body { font-family: Arial, sans-serif; background: #121212; color: #fff; padding: 20px; }
-  h1 { color: #ff7f27; }
-  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-  th, td { padding: 10px; border: 1px solid #555; text-align: left; }
-  th { background: #333; }
-  input, textarea { width: 100%; padding: 5px; margin-top: 5px; }
-  button { background: #ff7f27; color: #fff; border: none; padding: 8px 12px; cursor: pointer; margin-top: 5px; }
-  button:hover { background: #e66910; }
-  .delete-btn { background: red; margin-left: 5px; }
-</style>
-</head>
-<body>
-<h1>Edit Announcements</h1>
-<p>You can add, edit, or delete announcements. Save changes as a JSON file to update your site.</p>
-
-<table id="announcements-table">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Text</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
-
-<h2>Add New Announcement</h2>
-<input type="text" id="new-date" placeholder="Date (e.g., Sept 20, 2025)">
-<textarea id="new-text" placeholder="Announcement text"></textarea>
-<button onclick="addAnnouncement()">Add Announcement</button>
-
-<h2>Export JSON</h2>
-<button onclick="downloadJSON()">Download Updated JSON</button>
-
-<script>
-let announcements = [
-  { "date": "Sept 14, 2025", "text": "The server is still in progress but over 90% is done. Made by Andrej" },
-  { "date": "Sept 10, 2025", "text": "MineDime is cool !" },
-  { "date": "Sept 1, 2025", "text": "Welcome to the brand-new MineDime Network website!" }
-];
-
-// Render table
-function renderTable() {
-  const tbody = document.querySelector('#announcements-table tbody');
-  tbody.innerHTML = '';
-  announcements.forEach((ann, index) => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td><input type="text" value="${ann.date}" onchange="updateAnnouncement(${index}, 'date', this.value)"></td>
-      <td><textarea onchange="updateAnnouncement(${index}, 'text', this.value)">${ann.text}</textarea></td>
-      <td>
-        <button class="delete-btn" onclick="deleteAnnouncement(${index})">Delete</button>
-      </td>
-    `;
-    tbody.appendChild(tr);
-  });
-}
-
-// Update announcement
-function updateAnnouncement(index, field, value) {
-  announcements[index][field] = value;
-}
-
-// Delete announcement
-function deleteAnnouncement(index) {
-  announcements.splice(index, 1);
-  renderTable();
-}
-
-// Add new announcement
-function addAnnouncement() {
-  const date = document.getElementById('new-date').value.trim();
-  const text = document.getElementById('new-text').value.trim();
-  if (!date || !text) { alert('Both date and text are required'); return; }
-  announcements.unshift({ date, text });
-  document.getElementById('new-date').value = '';
-  document.getElementById('new-text').value = '';
-  renderTable();
-}
-
-// Download JSON
-function downloadJSON() {
-  const blob = new Blob([JSON.stringify(announcements, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'announcements.json';
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-renderTable();
-</script>
-</body>
-</html>
+[
+  {
+    "date": "Sept 14, 2025",
+    "text": "The server is still in progress but over 90% is done. Made by Andrej"
+  },
+  {
+    "date": "Sept 10, 2025",
+    "text": "MineDime is cool!"
+  },
+  {
+    "date": "Sept 1, 2025",
+    "text": "Welcome to the brand-new MineDime Network website!"
+  }
+]
