@@ -73,7 +73,7 @@
       max-width: 800px;
       border-radius: 10px;
     }
-    .gamemode h2 {
+    .gamemode h2, .news h2 {
       color: #ff7f27;
     }
 
@@ -82,6 +82,22 @@
       padding: 10px;
       margin-top: 30px;
       font-size: 0.9em;
+    }
+
+    /* News Section */
+    .news ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .news li {
+      background: rgba(255, 255, 255, 0.1);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: left;
+    }
+    .news strong {
+      color: #ff7f27;
     }
   </style>
 </head>
@@ -122,6 +138,12 @@
       </div>
     </section>
 
+    <!-- NEWS / ANNOUNCEMENTS -->
+    <section class="news">
+      <h2>📰 Latest News & Announcements</h2>
+      <ul id="news-list"></ul>
+    </section>
+
     <p style="margin-top:20px;">Contact us at <strong>support@minedime.org</strong> or open a ticket in Discord.</p>
   </main>
 
@@ -130,7 +152,7 @@
     <p>© 2025 MineDime Network. All rights reserved.</p>
   </footer>
 
-  <!-- SCRIPT FOR COPYABLE IP -->
+  <!-- SCRIPT FOR COPYABLE IP & LOADING NEWS -->
   <script>
     function copyIP() {
       const ip = document.getElementById('server-ip').innerText;
@@ -138,6 +160,23 @@
         alert('IP copied to clipboard: ' + ip);
       });
     }
+
+    async function loadNews() {
+      try {
+        const response = await fetch('announcements.json');
+        const news = await response.json();
+        const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '';
+        news.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>[${item.date}]</strong> ${item.text}`;
+          newsList.appendChild(li);
+        });
+      } catch (error) {
+        console.error('Failed to load announcements:', error);
+      }
+    }
+    loadNews();
   </script>
 </body>
 </html>
