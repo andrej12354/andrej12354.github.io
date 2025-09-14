@@ -39,21 +39,17 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-    nav a:hover {
-      background: #e66910;
-    }
+    nav a:hover { background: #e66910; }
+
     header {
       background: rgba(0,0,0,0.85);
       padding: 40px 20px;
       border-bottom: 3px solid #ff7f27;
     }
-    h1 {
-      font-size: 4em;
-      color: #ff7f27;
-      margin: 0;
-    }
+    h1 { font-size: 4em; color: #ff7f27; margin: 0; }
+
     .ip-box {
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0,0,0,0.75);
       display: inline-block;
       padding: 10px 20px;
       margin: 20px;
@@ -62,6 +58,7 @@
       border: 2px solid #ff7f27;
       cursor: pointer;
     }
+
     section {
       background: rgba(0,0,0,0.7);
       margin: 20px auto;
@@ -69,9 +66,8 @@
       max-width: 800px;
       border-radius: 10px;
     }
-    .gamemode h2, .news h2 {
-      color: #ff7f27;
-    }
+    .gamemode h2, .news h2 { color: #ff7f27; }
+
     footer {
       background: rgba(0,0,0,0.85);
       padding: 10px;
@@ -79,21 +75,15 @@
       font-size: 0.9em;
     }
 
-    /* News Section */
-    .news ul {
-      list-style-type: none;
-      padding: 0;
-    }
+    .news ul { list-style-type: none; padding: 0; }
     .news li {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       margin: 10px 0;
       padding: 10px;
       border-radius: 8px;
       text-align: left;
     }
-    .news strong {
-      color: #ff7f27;
-    }
+    .news strong { color: #ff7f27; }
   </style>
 </head>
 <body>
@@ -137,9 +127,7 @@
     <!-- NEWS / ANNOUNCEMENTS -->
     <section class="news">
       <h2>📰 Latest Announcements</h2>
-      <ul id="news-list">
-        <li>Loading announcements...</li>
-      </ul>
+      <ul id="news-list"><li>Loading announcements...</li></ul>
       <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
     </section>
 
@@ -162,7 +150,8 @@
 
     async function loadNews() {
       try {
-        const response = await fetch('announcements.json');
+        // Add timestamp to prevent caching
+        const response = await fetch(`announcements.json?t=${new Date().getTime()}`);
         const news = await response.json();
         const newsList = document.getElementById('news-list');
         newsList.innerHTML = '';
