@@ -138,7 +138,27 @@
       <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
     </section>
 
-    <p style="margin-top:20px;">Contact us at <strong>support@minedime.org</strong> or open a ticket in Discord.</p>
+    <!-- CONTACT BUTTON -->
+    <div style="margin-top: 20px;">
+      <a href="mailto:support@minedime.org" 
+         style="
+           display: inline-block;
+           background: #ff7f27;
+           color: #fff;
+           font-weight: bold;
+           padding: 12px 25px;
+           border-radius: 8px;
+           text-decoration: none;
+           transition: background 0.3s;
+           font-size: 1.2em;
+         "
+         onmouseover="this.style.background='#e66910';" 
+         onmouseout="this.style.background='#ff7f27';"
+      >
+        Contact Support
+      </a>
+    </div>
+
   </main>
 
   <!-- FOOTER -->
@@ -157,7 +177,6 @@
 
     async function loadNews() {
       try {
-        // fetch announcements.json from the same folder
         const response = await fetch(`announcements.json?t=${new Date().getTime()}`);
         const news = await response.json();
         const newsList = document.getElementById('news-list');
