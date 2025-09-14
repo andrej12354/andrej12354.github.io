@@ -1,199 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineDime Network - Join Now!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MineDime Network - Join Now!</title>
+<meta name="description" content="MineDime Network - Join our unique Minecraft gamemodes including LifeSteal SMP and PvP Practice! Play now at play.minedime.org">
+<meta name="keywords" content="Minecraft, MineDime, LifeSteal SMP, PvP Practice, Minecraft Server, join Minecraft server">
+<meta name="author" content="MineDime Network">
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="MineDime Network - Join our unique Minecraft gamemodes including LifeSteal SMP and PvP Practice! Play now at play.minedime.org">
-  <meta name="keywords" content="Minecraft, MineDime, LifeSteal SMP, PvP Practice, Minecraft Server, join Minecraft server">
-  <meta name="author" content="MineDime Network">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://i.pinimg.com/736x/df/8e/e7/df8ee7a1e5c723e18927aee30b3f46e2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+nav {
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav a {
+    color: #fff;
+    background: #ff7f27;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+nav a:hover { background: #e66910; }
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: url('https://i.pinimg.com/736x/df/8e/e7/df8ee7a1e5c723e18927aee30b3f46e2.jpg') no-repeat center center fixed;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      color: #fff;
-      text-align: center;
-    }
+header {
+    background: rgba(0,0,0,0.85);
+    padding: 40px 20px;
+    border-bottom: 3px solid #ff7f27;
+}
+h1 { font-size: 4em; color: #ff7f27; margin: 0; }
+.welcome-text { font-size: 1.6em; margin: 20px 0; line-height: 1.4; }
 
-    nav {
-      background: rgba(0, 0, 0, 0.9);
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+.ip-box {
+    background: rgba(0,0,0,0.75);
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    border: 2px solid #ff7f27;
+    cursor: pointer;
+}
 
-    nav a {
-      color: #fff;
-      background: #ff7f27;
-      padding: 10px 20px;
-      margin: 0 5px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
+section {
+    background: rgba(0,0,0,0.7);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 10px;
+}
+.gamemode h2, .news h2 { color: #ff7f27; }
 
-    nav a:hover { background: #e66910; }
+.gamemode p {
+    max-width: 700px;
+    margin: 10px auto;
+    line-height: 1.6em;
+}
 
-    header {
-      background: rgba(0,0,0,0.85);
-      padding: 40px 20px;
-      border-bottom: 3px solid #ff7f27;
-    }
+footer {
+    background: rgba(0,0,0,0.85);
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
 
-    h1 { font-size: 4em; color: #ff7f27; margin: 0; }
+.news ul { list-style-type: none; padding: 0; }
+.news li {
+    background: rgba(255,255,255,0.1);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+}
+.news strong { color: #ff7f27; }
 
-    .ip-box {
-      background: rgba(0,0,0,0.75);
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 20px;
-      border-radius: 10px;
-      font-size: 1.2em;
-      border: 2px solid #ff7f27;
-      cursor: pointer;
-    }
-
-    section {
-      background: rgba(0,0,0,0.7);
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 800px;
-      border-radius: 10px;
-    }
-
-    .gamemode h2, .news h2 { color: #ff7f27; }
-
-    footer {
-      background: rgba(0,0,0,0.85);
-      padding: 10px;
-      margin-top: 30px;
-      font-size: 0.9em;
-    }
-
-    .news ul { list-style-type: none; padding: 0; }
-    .news li {
-      background: rgba(255,255,255,0.1);
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 8px;
-      text-align: left;
-    }
-    .news strong { color: #ff7f27; }
-  </style>
+.mail-btn {
+    display: inline-block;
+    background: #ff7f27;
+    color: #fff;
+    padding: 12px 25px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.mail-btn:hover { background: #e66910; }
+</style>
 </head>
 <body>
-  <!-- NAVIGATION BAR -->
-  <nav>
+
+<nav>
     <a href="https://store.minedime.org">Store</a>
     <a href="https://www.minedime.org/discord">Discord</a>
     <a href="https://www.minedime.org/vote">Vote</a>
     <a href="https://www.minedime.org/rules">Rules</a>
     <a href="https://www.minedime.org/news">News</a>
-  </nav>
+</nav>
 
-  <!-- HEADER -->
-  <header>
+<header>
     <h1>MineDime Network</h1>
-    <p>Version: 1.21+</p>
-  </header>
+</header>
 
-  <!-- SERVER IP -->
-  <main>
+<main>
     <div class="ip-box" onclick="copyIP()">
-      <strong>Server IP:</strong> <span id="server-ip">play.minedime.org</span>
+        <strong>Server IP:</strong> <span id="server-ip">play.minedime.org</span>
     </div>
     <p>Click the IP to copy!</p>
 
-    <p>Welcome to MineDime! Dive into our exciting Minecraft world and explore our unique gamemodes below: LifeSteal SMP, PvP Practice, and much more waiting for you!</p>
+    <p class="welcome-text">
+      Welcome to MineDime! Dive into our exciting Minecraft world and explore unique gamemodes designed for adventure, competition, and fun!
+    </p>
 
     <!-- GAMEMODES -->
     <section>
-      <div class="gamemode">
-        <h2>⚔️ LifeSteal SMP</h2>
-        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP?</p>
-      </div>
+        <div class="gamemode">
+            <h2>⚔️ LifeSteal SMP</h2>
+            <p>
+              Fight for hearts, raid bases, and dominate the SMP world.<br>
+              Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP? 
+            </p>
+        </div>
 
-      <div class="gamemode">
-        <h2>🔥 PvP Practice</h2>
-        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle!</p>
-      </div>
+        <div class="gamemode">
+            <h2>🔥 PvP Practice</h2>
+            <p>
+              Sharpen your skills with duels, kits, and arenas.<br>
+              Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle!
+            </p>
+        </div>
     </section>
 
     <!-- NEWS / ANNOUNCEMENTS -->
     <section class="news">
-      <h2>📰 Latest Announcements</h2>
-      <ul id="news-list">
-        <li>Loading announcements...</li>
-      </ul>
-      <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
+        <h2>📰 Latest Announcements</h2>
+        <ul id="news-list">
+            <li>Loading announcements...</li>
+        </ul>
+        <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
     </section>
 
-    <!-- CONTACT BUTTON -->
-    <div style="margin-top: 20px;">
-      <a href="mailto:support@minedime.org" 
-         style="
-           display: inline-block;
-           background: #ff7f27;
-           color: #fff;
-           font-weight: bold;
-           padding: 12px 25px;
-           border-radius: 8px;
-           text-decoration: none;
-           transition: background 0.3s;
-           font-size: 1.2em;
-         "
-         onmouseover="this.style.background='#e66910';" 
-         onmouseout="this.style.background='#ff7f27';"
-      >
+    <!-- MAIL BUTTON -->
+    <a class="mail-btn" href="mailto:support@minedime.org?subject=MineDime%20Support&body=Hello%20MineDime%20Support,">
         Contact Support
-      </a>
-    </div>
+    </a>
+</main>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
+<footer>
     <p>© 2025 MineDime Network. All rights reserved.</p>
-  </footer>
+</footer>
 
-  <!-- SCRIPT FOR COPYABLE IP & LOADING NEWS -->
-  <script>
-    function copyIP() {
-      const ip = document.getElementById('server-ip').innerText;
-      navigator.clipboard.writeText(ip).then(() => {
+<script>
+function copyIP() {
+    const ip = document.getElementById('server-ip').innerText;
+    navigator.clipboard.writeText(ip).then(() => {
         alert('IP copied to clipboard: ' + ip);
-      });
-    }
+    });
+}
 
-    async function loadNews() {
-      try {
+async function loadNews() {
+    try {
         const response = await fetch(`announcements.json?t=${new Date().getTime()}`);
         const news = await response.json();
         const newsList = document.getElementById('news-list');
         newsList.innerHTML = '';
         news.forEach(item => {
-          const li = document.createElement('li');
-          li.innerHTML = `<strong>[${item.date}]</strong> ${item.text}`;
-          newsList.appendChild(li);
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>[${item.date}]</strong> ${item.text}`;
+            newsList.appendChild(li);
         });
-      } catch (error) {
+    } catch (error) {
         const newsList = document.getElementById('news-list');
         newsList.innerHTML = '<li>Failed to load announcements.</li>';
         console.error('Failed to load announcements:', error);
-      }
     }
+}
+loadNews();
+</script>
 
-    loadNews();
-  </script>
 </body>
 </html>
