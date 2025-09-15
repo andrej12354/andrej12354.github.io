@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MineDime Network - Join Now!</title>
+
   <meta name="description" content="MineDime Network - Join our unique Minecraft gamemodes including LifeSteal SMP and PvP Practice! Play now at play.minedime.org">
   <meta name="keywords" content="Minecraft, MineDime, LifeSteal SMP, PvP Practice, Minecraft Server, join Minecraft server">
   <meta name="author" content="MineDime Network">
@@ -20,7 +21,7 @@
     }
 
     nav {
-      background: rgba(0,0,0,0.9);
+      background: rgba(0, 0, 0, 0.9);
       display: flex;
       justify-content: center;
       padding: 10px 0;
@@ -44,12 +45,12 @@
 
     .hamburger {
       display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
       position: absolute;
       right: 20px;
       top: 15px;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
     }
 
     .hamburger div {
@@ -64,36 +65,56 @@
       right: -250px;
       width: 250px;
       height: 100%;
-      background: rgba(0,0,0,0.95);
+      background: rgba(0, 0, 0, 0.95);
       display: flex;
       flex-direction: column;
-      padding: 20px;
-      transition: 0.3s ease;
-      z-index: 1000;
+      align-items: center;
+      padding-top: 50px;
+      transition: right 0.3s ease-in-out;
+      z-index: 200;
     }
 
     .mobile-menu a {
       color: white;
+      background: #ff7f27;
+      padding: 10px 20px;
+      margin: 10px 0;
+      border-radius: 5px;
       text-decoration: none;
-      font-size: 20px;
-      margin: 15px 0;
+      font-weight: bold;
+      width: 80%;
+      text-align: center;
     }
 
-    .mobile-menu.active { right: 0; }
-
     .close-btn {
-      color: red;
-      font-size: 24px;
-      align-self: flex-start;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background: red;
+      color: white;
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
       cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
     }
 
     @media (max-width: 768px) {
-      nav { display: none; }
-      .hamburger { display: flex; }
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
     }
 
-    header { background: rgba(0,0,0,0.85); padding: 40px 20px; border-bottom: 3px solid #ff7f27; }
+    header {
+      background: rgba(0,0,0,0.85);
+      padding: 40px 20px;
+      border-bottom: 3px solid #ff7f27;
+    }
+
     h1 { font-size: 4em; color: #ff7f27; margin: 0; }
 
     .ip-box {
@@ -117,6 +138,13 @@
 
     .gamemode h2, .news h2 { color: #ff7f27; }
 
+    footer {
+      background: rgba(0,0,0,0.85);
+      padding: 10px;
+      margin-top: 30px;
+      font-size: 0.9em;
+    }
+
     .news ul { list-style-type: none; padding: 0; }
     .news li {
       background: rgba(255,255,255,0.1);
@@ -127,14 +155,40 @@
     }
     .news strong { color: #ff7f27; }
 
-    .gamemode p { max-width: 700px; margin: 10px auto; line-height: 1.5; font-size: 1.1em; text-align: left; }
+    .gamemode p {
+      max-width: 700px;
+      margin: 10px auto;
+      line-height: 1.5;
+      font-size: 1.1em;
+      text-align: left;
+    }
 
-    main > p:first-of-type { max-width: 800px; margin: 20px auto; font-size: 1.2em; line-height: 1.4; }
-
-    footer { background: rgba(0,0,0,0.85); padding: 10px; margin-top: 30px; }
+    main > p:first-of-type {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.2em;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
+  <div class="hamburger" onclick="openMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" onclick="closeMenu()">X</button>
+    <a href="https://www.minedime.org">Home</a>
+    <a href="https://store.minedime.org">Store</a>
+    <a href="https://www.minedime.org/discord">Discord</a>
+    <a href="https://www.minedime.org/vote">Vote</a>
+    <a href="https://www.minedime.org/rules">Rules</a>
+    <a href="https://www.minedime.org/news">News</a>
+    <a href="https://www.minedime.org/staff">Staff</a>
+    <a href="https://www.minedime.org/apply">Apply</a>
+  </div>
 
   <nav>
     <a href="https://www.minedime.org">Home</a>
@@ -146,24 +200,6 @@
     <a href="https://www.minedime.org/staff">Staff</a>
     <a href="https://www.minedime.org/apply">Apply</a>
   </nav>
-
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <span class="close-btn" onclick="toggleMenu()">✖</span>
-    <a href="https://www.minedime.org">Home</a>
-    <a href="https://store.minedime.org">Store</a>
-    <a href="https://www.minedime.org/discord">Discord</a>
-    <a href="https://www.minedime.org/vote">Vote</a>
-    <a href="https://www.minedime.org/rules">Rules</a>
-    <a href="https://www.minedime.org/news">News</a>
-    <a href="https://www.minedime.org/staff">Staff</a>
-    <a href="https://www.minedime.org/apply">Apply</a>
-  </div>
 
   <header>
     <h1>MineDime Network</h1>
@@ -206,6 +242,14 @@
   </footer>
 
   <script>
+    function openMenu() {
+      document.getElementById('mobileMenu').style.right = '0';
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').style.right = '-250px';
+    }
+
     function copyIP() {
       const ip = document.getElementById('server-ip').innerText;
       navigator.clipboard.writeText(ip).then(() => {
@@ -213,12 +257,25 @@
       });
     }
 
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('active');
-    }
-
     async function loadNews() {
       try {
         const response = await fetch(`announcements.json?t=${new Date().getTime()}`);
         const news = await response.json();
-        const newsList = document.getElementById
+        const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '';
+        news.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>[${item.date}]</strong> ${item.text}`;
+          newsList.appendChild(li);
+        });
+      } catch (error) {
+        const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '<li>Failed to load announcements.</li>';
+        console.error('Failed to load announcements:', error);
+      }
+    }
+
+    loadNews();
+  </script>
+</body>
+</html>
