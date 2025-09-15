@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MineDime Network - Join Now!</title>
 
-  <!-- SEO Meta Tags -->
   <meta name="description" content="MineDime Network - Join our unique Minecraft gamemodes including LifeSteal SMP and PvP Practice! Play now at play.minedime.org">
   <meta name="keywords" content="Minecraft, MineDime, LifeSteal SMP, PvP Practice, Minecraft Server, join Minecraft server">
   <meta name="author" content="MineDime Network">
@@ -90,7 +89,6 @@
     }
     .news strong { color: #ff7f27; }
 
-    /* Make gamemode descriptions span 2–3 lines nicely */
     .gamemode p {
       max-width: 700px;
       margin: 10px auto;
@@ -99,7 +97,6 @@
       text-align: left;
     }
 
-    /* Slightly expand welcome message for readability */
     main > p:first-of-type {
       max-width: 800px;
       margin: 20px auto;
@@ -109,22 +106,21 @@
   </style>
 </head>
 <body>
-  <!-- NAVIGATION BAR -->
   <nav>
     <a href="https://store.minedime.org">Store</a>
     <a href="https://www.minedime.org/discord">Discord</a>
     <a href="https://www.minedime.org/vote">Vote</a>
     <a href="https://www.minedime.org/rules">Rules</a>
     <a href="https://www.minedime.org/news">News</a>
+    <a href="https://www.minedime.org/staff">Staff</a>
+    <a href="https://www.minedime.org/apply">Apply</a>
   </nav>
 
-  <!-- HEADER -->
   <header>
     <h1>MineDime Network</h1>
     <p>Version: 1.21+</p>
   </header>
 
-  <!-- SERVER IP -->
   <main>
     <div class="ip-box" onclick="copyIP()">
       <strong>Server IP:</strong> <span id="server-ip">play.minedime.org</span>
@@ -133,7 +129,6 @@
 
     <p>Welcome to MineDime! Dive into our exciting Minecraft world and explore our unique gamemodes below: LifeSteal SMP, PvP Practice, and much more waiting for you!</p>
 
-    <!-- GAMEMODES -->
     <section>
       <div class="gamemode">
         <h2>⚔️ LifeSteal SMP</h2>
@@ -146,7 +141,6 @@
       </div>
     </section>
 
-    <!-- NEWS / ANNOUNCEMENTS -->
     <section class="news">
       <h2>📰 Latest Announcements</h2>
       <ul id="news-list">
@@ -158,12 +152,10 @@
     <p style="margin-top:20px;">Contact us at <strong>support@minedime.org</strong> or open a ticket in Discord.</p>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 MineDime Network. All rights reserved.</p>
   </footer>
 
-  <!-- SCRIPT FOR COPYABLE IP & LOADING NEWS -->
   <script>
     function copyIP() {
       const ip = document.getElementById('server-ip').innerText;
