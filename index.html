@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MineDime Network - Join Now!</title>
-
   <meta name="description" content="MineDime Network - Join our unique Minecraft gamemodes including LifeSteal SMP and PvP Practice! Play now at play.minedime.org">
   <meta name="keywords" content="Minecraft, MineDime, LifeSteal SMP, PvP Practice, Minecraft Server, join Minecraft server">
   <meta name="author" content="MineDime Network">
-
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,6 +18,7 @@
       text-align: center;
     }
 
+    /* Navbar container */
     nav {
       background: rgba(0, 0, 0, 0.9);
       display: flex;
@@ -42,6 +41,61 @@
     }
 
     nav a:hover { background: #e66910; }
+
+    /* Hamburger icon */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 4px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile menu styles */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+      transition: right 0.3s ease;
+      z-index: 200;
+    }
+
+    .mobile-menu a {
+      margin: 10px;
+      padding: 10px;
+      background: #ff7f27;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    /* Hide normal nav links on small screens */
+    @media (max-width: 768px) {
+      nav { justify-content: flex-end; }
+      nav a { display: none; }
+      .hamburger { display: flex; }
+    }
 
     header {
       background: rgba(0,0,0,0.85);
@@ -106,7 +160,13 @@
   </style>
 </head>
 <body>
+  <!-- NAVIGATION -->
   <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <a href="https://store.minedime.org">Store</a>
     <a href="https://www.minedime.org/discord">Discord</a>
     <a href="https://www.minedime.org/vote">Vote</a>
@@ -116,6 +176,18 @@
     <a href="https://www.minedime.org/apply">Apply</a>
   </nav>
 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://store.minedime.org">Store</a>
+    <a href="https://www.minedime.org/discord">Discord</a>
+    <a href="https://www.minedime.org/vote">Vote</a>
+    <a href="https://www.minedime.org/rules">Rules</a>
+    <a href="https://www.minedime.org/news">News</a>
+    <a href="https://www.minedime.org/staff">Staff</a>
+    <a href="https://www.minedime.org/apply">Apply</a>
+  </div>
+
+  <!-- HEADER -->
   <header>
     <h1>MineDime Network</h1>
     <p>Version: 1.21+</p>
@@ -126,26 +198,22 @@
       <strong>Server IP:</strong> <span id="server-ip">play.minedime.org</span>
     </div>
     <p>Click the IP to copy!</p>
-
     <p>Welcome to MineDime! Dive into our exciting Minecraft world and explore our unique gamemodes below: LifeSteal SMP, PvP Practice, and much more waiting for you!</p>
 
     <section>
       <div class="gamemode">
         <h2>⚔️ LifeSteal SMP</h2>
-        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP? Explore dungeons, build alliances, and strategize your way to victory!</p>
+        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await?</p>
       </div>
-
       <div class="gamemode">
         <h2>🔥 PvP Practice</h2>
-        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle! Learn new combos, practice your reflexes, and rise above your opponents in competitive matches.</p>
+        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style and rise above your opponents!</p>
       </div>
     </section>
 
     <section class="news">
       <h2>📰 Latest Announcements</h2>
-      <ul id="news-list">
-        <li>Loading announcements...</li>
-      </ul>
+      <ul id="news-list"><li>Loading announcements...</li></ul>
       <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
     </section>
 
@@ -157,6 +225,10 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
     function copyIP() {
       const ip = document.getElementById('server-ip').innerText;
       navigator.clipboard.writeText(ip).then(() => {
@@ -176,12 +248,10 @@
           newsList.appendChild(li);
         });
       } catch (error) {
-        const newsList = document.getElementById('news-list');
-        newsList.innerHTML = '<li>Failed to load announcements.</li>';
+        document.getElementById('news-list').innerHTML = '<li>Failed to load announcements.</li>';
         console.error('Failed to load announcements:', error);
       }
     }
-
     loadNews();
   </script>
 </body>
