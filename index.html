@@ -16,6 +16,7 @@
       margin: 0;
       padding: 0;
       color: #fff;
+      text-align: center;
     }
 
     nav {
@@ -104,28 +105,23 @@
     }
 
     header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background: rgba(0,0,0,0.85);
-      padding: 20px 40px;
+      padding: 40px 20px 20px;
       border-bottom: 3px solid #ff7f27;
-      gap: 15px;
     }
 
-    header h1 { font-size: 2.5em; color: #ff7f27; margin: 0; }
-
-    main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0 20px;
+    header img {
+      max-width: 150px;
+      margin-bottom: 10px;
     }
+
+    h1 { font-size: 3em; color: #ff7f27; margin: 0; }
 
     .ip-box {
       background: rgba(0,0,0,0.75);
       display: inline-block;
       padding: 10px 20px;
-      margin: 20px 0;
+      margin: 20px;
       border-radius: 10px;
       font-size: 1.2em;
       border: 2px solid #ff7f27;
@@ -134,25 +130,44 @@
 
     section {
       background: rgba(0,0,0,0.7);
-      margin: 20px 0;
+      margin: 20px auto;
       padding: 20px;
+      max-width: 800px;
       border-radius: 10px;
     }
 
-    .gamemode h2 { color: #ff7f27; }
-
-    .gamemode p {
-      line-height: 1.5;
-      font-size: 1.1em;
-      text-align: left;
-    }
+    .gamemode h2, .news h2 { color: #ff7f27; }
 
     footer {
       background: rgba(0,0,0,0.85);
       padding: 10px;
       margin-top: 30px;
       font-size: 0.9em;
-      text-align: center;
+    }
+
+    .news ul { list-style-type: none; padding: 0; }
+    .news li {
+      background: rgba(255,255,255,0.1);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: left;
+    }
+    .news strong { color: #ff7f27; }
+
+    .gamemode p {
+      max-width: 700px;
+      margin: 10px auto;
+      line-height: 1.5;
+      font-size: 1.1em;
+      text-align: left;
+    }
+
+    main > p:first-of-type {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.2em;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -167,7 +182,7 @@
     <button class="close-btn" onclick="closeMenu()">X</button>
     <a href="https://www.minedime.org">Home</a>
     <a href="https://store.minedime.org">Store</a>
-    <a href="https://discord.gg/dfH9v9bt8r">Discord</a>
+    <a href="https://www.minedime.org/discord">Discord</a>
     <a href="https://www.minedime.org/vote">Vote</a>
     <a href="https://www.minedime.org/rules">Rules</a>
     <a href="https://www.minedime.org/news">News</a>
@@ -175,21 +190,22 @@
     <a href="https://www.minedime.org/apply">Apply</a>
   </div>
 
+  <header>
+    <img src="logo.png" alt="MineDime Logo">
+    <h1>MineDime Network</h1>
+    <p>Version: 1.21+</p>
+  </header>
+
   <nav>
     <a href="https://www.minedime.org">Home</a>
     <a href="https://store.minedime.org">Store</a>
-    <a href="https://discord.gg/dfH9v9bt8r">Discord</a>
+    <a href="https://www.minedime.org/discord">Discord</a>
     <a href="https://www.minedime.org/vote">Vote</a>
     <a href="https://www.minedime.org/rules">Rules</a>
     <a href="https://www.minedime.org/news">News</a>
     <a href="https://www.minedime.org/staff">Staff</a>
     <a href="https://www.minedime.org/apply">Apply</a>
   </nav>
-
-  <header>
-    <img src="https://cdn.discordapp.com/attachments/1360616419145941087/1417140784003682404/erlzepwgxpmkhwt8flou.png" alt="MineDime Logo" width="80">
-    <h1>MineDime Network</h1>
-  </header>
 
   <main>
     <div class="ip-box" onclick="copyIP()">
@@ -202,14 +218,24 @@
     <section>
       <div class="gamemode">
         <h2>⚔️ LifeSteal SMP</h2>
-        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP? Explore dungeons, build alliances, and strategize your way to victory!</p>
+        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP?</p>
       </div>
 
       <div class="gamemode">
         <h2>🔥 PvP Practice</h2>
-        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle! Learn new combos, practice your reflexes, and rise above your opponents in competitive matches.</p>
+        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle!</p>
       </div>
     </section>
+
+    <section class="news">
+      <h2>📰 Latest Announcements</h2>
+      <ul id="news-list">
+        <li>Loading announcements...</li>
+      </ul>
+      <p><a href="https://www.minedime.org/news" style="color:#ff7f27;">View all news →</a></p>
+    </section>
+
+    <p style="margin-top:20px;">Contact us at <strong>support@minedime.org</strong> or open a ticket in Discord.</p>
   </main>
 
   <footer>
@@ -220,17 +246,33 @@
     function openMenu() {
       document.getElementById('mobileMenu').style.right = '0';
     }
-
     function closeMenu() {
       document.getElementById('mobileMenu').style.right = '-250px';
     }
-
     function copyIP() {
       const ip = document.getElementById('server-ip').innerText;
       navigator.clipboard.writeText(ip).then(() => {
         alert('IP copied to clipboard: ' + ip);
       });
     }
+    async function loadNews() {
+      try {
+        const response = await fetch(`announcements.json?t=${new Date().getTime()}`);
+        const news = await response.json();
+        const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '';
+        news.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>[${item.date}]</strong> ${item.text}`;
+          newsList.appendChild(li);
+        });
+      } catch (error) {
+        const newsList = document.getElementById('news-list');
+        newsList.innerHTML = '<li>Failed to load announcements.</li>';
+        console.error('Failed to load announcements:', error);
+      }
+    }
+    loadNews();
   </script>
 </body>
 </html>
