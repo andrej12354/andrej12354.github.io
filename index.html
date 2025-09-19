@@ -105,39 +105,20 @@
 
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       background: rgba(0,0,0,0.85);
       padding: 20px 40px;
       border-bottom: 3px solid #ff7f27;
-    }
-
-    header .logo {
-      display: flex;
-      align-items: center;
       gap: 15px;
     }
 
     header h1 { font-size: 2.5em; color: #ff7f27; margin: 0; }
 
-    .discord-widget {
-      width: 250px;
-      height: 400px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 2px solid #ff7f27;
-    }
-
     main {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 20px auto;
-      gap: 20px;
-    }
-
-    .content {
-      flex: 1;
+      padding: 0 20px;
     }
 
     .ip-box {
@@ -158,7 +139,7 @@
       border-radius: 10px;
     }
 
-    .gamemode h2, .news h2 { color: #ff7f27; }
+    .gamemode h2 { color: #ff7f27; }
 
     .gamemode p {
       line-height: 1.5;
@@ -173,7 +154,6 @@
       font-size: 0.9em;
       text-align: center;
     }
-
   </style>
 </head>
 <body>
@@ -187,7 +167,7 @@
     <button class="close-btn" onclick="closeMenu()">X</button>
     <a href="https://www.minedime.org">Home</a>
     <a href="https://store.minedime.org">Store</a>
-    <a href="https://www.minedime.org/discord">Discord</a>
+    <a href="https://discord.gg/dfH9v9bt8r">Discord</a>
     <a href="https://www.minedime.org/vote">Vote</a>
     <a href="https://www.minedime.org/rules">Rules</a>
     <a href="https://www.minedime.org/news">News</a>
@@ -198,7 +178,7 @@
   <nav>
     <a href="https://www.minedime.org">Home</a>
     <a href="https://store.minedime.org">Store</a>
-    <a href="https://www.minedime.org/discord">Discord</a>
+    <a href="https://discord.gg/dfH9v9bt8r">Discord</a>
     <a href="https://www.minedime.org/vote">Vote</a>
     <a href="https://www.minedime.org/rules">Rules</a>
     <a href="https://www.minedime.org/news">News</a>
@@ -207,34 +187,29 @@
   </nav>
 
   <header>
-    <div class="logo">
-      <img src="https://cdn.discordapp.com/attachments/1360616419145941087/1417140784003682404/erlzepwgxpmkhwt8flou.png" alt="MineDime Logo" width="80">
-      <h1>MineDime Network</h1>
-    </div>
-    <iframe class="discord-widget" src="https://discord.com/widget?id=1360616415916462331&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <img src="https://cdn.discordapp.com/attachments/1360616419145941087/1417140784003682404/erlzepwgxpmkhwt8flou.png" alt="MineDime Logo" width="80">
+    <h1>MineDime Network</h1>
   </header>
 
   <main>
-    <div class="content">
-      <div class="ip-box" onclick="copyIP()">
-        <strong>Server IP:</strong> <span id="server-ip">play.minedime.org</span>
-      </div>
-      <p>Click the IP to copy!</p>
-
-      <p>Welcome to MineDime! Dive into our exciting Minecraft world and explore our unique gamemodes below: LifeSteal SMP, PvP Practice, and much more waiting for you!</p>
-
-      <section>
-        <div class="gamemode">
-          <h2>⚔️ LifeSteal SMP</h2>
-          <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP? Explore dungeons, build alliances, and strategize your way to victory!</p>
-        </div>
-
-        <div class="gamemode">
-          <h2>🔥 PvP Practice</h2>
-          <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle! Learn new combos, practice your reflexes, and rise above your opponents in competitive matches.</p>
-        </div>
-      </section>
+    <div class="ip-box" onclick="copyIP()">
+      <strong>Server IP:</strong> <span id="server-ip">play.minedime.org</span>
     </div>
+    <p>Click the IP to copy!</p>
+
+    <p>Welcome to MineDime! Dive into our exciting Minecraft world and explore our unique gamemodes below: LifeSteal SMP, PvP Practice, and much more waiting for you!</p>
+
+    <section>
+      <div class="gamemode">
+        <h2>⚔️ LifeSteal SMP</h2>
+        <p>Fight for hearts, raid bases, and dominate the SMP world. Every kill steals a heart — can you survive the intense battles that await in LifeSteal SMP? Explore dungeons, build alliances, and strategize your way to victory!</p>
+      </div>
+
+      <div class="gamemode">
+        <h2>🔥 PvP Practice</h2>
+        <p>Sharpen your skills with duels, kits, and arenas. Perfect your PvP style before taking on LifeSteal and becoming a true champion in every battle! Learn new combos, practice your reflexes, and rise above your opponents in competitive matches.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
